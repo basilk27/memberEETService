@@ -107,7 +107,7 @@ module.exports = ".fill-space {\n  flex: 1 1 auto;\n}\n\n.no-margin {\n  margin-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div>\n    <mat-toolbar color=\"primary\">\n      <div class=\"mat-h1\">\n        <span>Membership EET</span>\n      </div>\n      <span class=\"fill-space\"></span>\n      <div *ngIf=\"zManuState.loginButtonOn\">\n        <span>\n            <a mat-raised-button routerLink='/login'\n               class='mat-button'\n               (click)='onLoginClick()'>Login</a>\n        </span>\n      </div>\n    </mat-toolbar>\n  </div>\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <a mat-mat-raised-button  routerLink=\"/main\" class='mat-button'>EET Main</a>\n      <a mat-mat-raised-button  routerLink=\"/cadocs\" class='mat-button'>View CA-Doc</a>\n      <a mat-mat-raised-button  routerLink=\"/search\" class='mat-button'>Search Status</a>\n      <a mat-mat-raised-button  routerLink=\"/eeterrors\" class='mat-button'>EET Errors</a>\n      <a mat-mat-raised-button  routerLink=\"/schedule\" class='mat-button'>Job Schedule</a>\n      <a mat-mat-raised-button  routerLink=\"/mapping\" class='mat-button'>Group Mapping</a>\n    </mat-toolbar>\n  </div>\n</div>\n<router-outlet></router-outlet>\n"
+module.exports = "<div>\n  <div>\n    <mat-toolbar color=\"primary\">\n      <div fxFlexAlign=\"auto\" class=\"mat-h1\">\n        <span >Membership Electronic Eligibility Transfer</span>\n      </div>\n      <span class=\"fill-space\"></span>\n      <div *ngIf=\"loginButtonOn\">\n        <span>\n            <a mat-raised-button routerLink='/login'\n               class='mat-button'\n               (click)='onLoginClick()'>Login</a>\n        </span>\n      </div>\n    </mat-toolbar>\n  </div>\n<!--\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <a mat-mat-raised-button  routerLink=\"/main\" class='mat-button'>EET Main</a>\n      <a mat-mat-raised-button  routerLink=\"/cadocs\" class='mat-button'>View CA-Doc</a>\n      <a mat-mat-raised-button  routerLink=\"/search\" class='mat-button'>Search Status</a>\n      <a mat-mat-raised-button  routerLink=\"/eeterrors\" class='mat-button'>EET Errors</a>\n      <a mat-mat-raised-button  routerLink=\"/schedule\" class='mat-button'>Job Schedule</a>\n      <a mat-mat-raised-button  routerLink=\"/mapping\" class='mat-button'>Group Mapping</a>\n    </mat-toolbar>\n  </div>\n-->\n</div>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -123,7 +123,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _service_state_meanu_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./service/state/meanu-state.service */ "./src/app/service/state/meanu-state.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -135,38 +134,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
+// import { MeanuStateService } from './service/state/meanu-state.service';
+// import { ManuState } from './model/manu-state';
+// import { Observable } from 'rxjs';
 // import { Router } from '@angular/router';
 var AppComponent = /** @class */ (function () {
-    function AppComponent(httpClient, meanuService) {
+    //   mainManuFlag: boolean;
+    //   manuState: Observable<ManuState>;
+    //   zManuState: ManuState;
+    //  constructor(private httpClient: HttpClient, private meanuService: MeanuStateService) {
+    function AppComponent(httpClient) {
         this.httpClient = httpClient;
-        this.meanuService = meanuService;
         this.title = 'ngMemberEET';
-        // this.manuState = meanuState.getState();
+        this.loginButtonOn = true;
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.manuState = this.meanuService.getState();
+        //    this.manuState = this.meanuService.getState();
         // this.loginFlag =
-        this.manuState.subscribe(function (aManu) { _this.zManuState = aManu; });
-        console.log('BBBBB  ' + this.zManuState.loginButtonOn);
-        console.log('NNNNN  ' + this.zManuState.mainManuFlag);
-        this.mainManuFlag = false;
+        //    this.manuState.subscribe( aManu => { this.zManuState = aManu; } );
+        //    console.log('BBBBB  ' + this.zManuState.loginButtonOn);
+        //    console.log('NNNNN  ' + this.zManuState.mainManuFlag);
+        //    this.mainManuFlag = false;
         this.httpClient.get('/v1/api/home').subscribe(function (data) { });
     };
     AppComponent.prototype.onLoginClick = function () {
-        //    this.loginFlag = false;
-        var currentManuState = {
-            loginButtonOn: false,
-            mainManuFlag: false,
-            mainButtonOn: false,
-            cadocsButtonOn: false,
-            searchButtonOn: false,
-            eeterrorsButtonOn: false,
-            scheduleButtonOn: false,
-            mappingButtonOn: false
-        };
-        this.meanuService.manuCriteria = currentManuState;
+        this.loginButtonOn = false;
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -174,7 +166,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _service_state_meanu_state_service__WEBPACK_IMPORTED_MODULE_2__["MeanuStateService"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -413,7 +405,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div fxLayout=\"column\" fxLayoutAlign=\"center stretch\" fxFill> -->\n<div>\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">EET Main</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>EET Main display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<div *ngIf='zManuState.mainManuFlag'>\n  <mat-toolbar color=\"accent\">\n    <div *ngIf='zManuState.mainButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n    </div>\n    <div *ngIf='zManuState.cadocsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n    </div>\n    <div *ngIf='zManuState.searchButtonOn'>\n      <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n    </div>\n    <div *ngIf='zManuState.eeterrorsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n    </div>\n    <div *ngIf='zManuState.scheduleButtonOn'>\n    <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n    </div>\n    <div *ngIf='zManuState.mappingButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n    </div>\n  </mat-toolbar>\n</div>\n<!-- <div fxLayout=\"column\" fxLayoutAlign=\"center stretch\" fxFill> -->\n<!-- bmk hold\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n-->\n<div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n  <mat-card>\n    <mat-card-subtitle>\n    <!--  <mat-card-title class=\"mat-display-2\">  -->\n        <span><p>Welcome to the Electronic Eligibility Transfer (EET) options menu.<br>\n          EET is an application that allows authorized users to manage membership eligibility via a browser interface.<br>\n          From this menu, users can perform the following tasks based on access privileges.</p></span>\n    <!--  </mat-card-title>  -->\n    </mat-card-subtitle>\n    <mat-card-content>\n        <mat-tab-group>\n          <mat-tab label=\"Create Employer EET Profile\">Create Employer EET Profile info</mat-tab>\n          <mat-tab label=\"Update Employer EET Profile\">Update Employer EET Profile info</mat-tab>\n          <mat-tab label=\"View Employer EET Profile\">View Employer EET Profile info</mat-tab>\n          <mat-tab label=\"Update Employer EET Contacts\">Update Employer EET Contacts info</mat-tab>\n        </mat-tab-group>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
 
 /***/ }),
 
@@ -428,6 +420,7 @@ module.exports = "<!-- <div fxLayout=\"column\" fxLayoutAlign=\"center stretch\"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EetMainComponent", function() { return EetMainComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -438,10 +431,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var EetMainComponent = /** @class */ (function () {
-    function EetMainComponent() {
+    function EetMainComponent(_router) {
+        this._router = _router;
+        this.zManuState = {
+            mainManuFlag: true,
+            mainButtonOn: false,
+            cadocsButtonOn: true,
+            searchButtonOn: true,
+            eeterrorsButtonOn: true,
+            scheduleButtonOn: true,
+            mappingButtonOn: true
+        };
     }
     EetMainComponent.prototype.ngOnInit = function () {
+    };
+    EetMainComponent.prototype.mainRouter = function () {
+        this._router.navigate(['/main']);
+    };
+    EetMainComponent.prototype.cadocsRouter = function () {
+        this._router.navigate(['/cadocs']);
+    };
+    EetMainComponent.prototype.searchRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    EetMainComponent.prototype.eeterrorsRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    EetMainComponent.prototype.scheduleRouter = function () {
+        this._router.navigate(['/schedule']);
+    };
+    EetMainComponent.prototype.mappingRouter = function () {
+        this._router.navigate(['/mapping']);
     };
     EetMainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -449,7 +471,7 @@ var EetMainComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./eet-main.component.html */ "./src/app/eet-main/eet-main.component.html"),
             styles: [__webpack_require__(/*! ./eet-main.component.css */ "./src/app/eet-main/eet-main.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], EetMainComponent);
     return EetMainComponent;
 }());
@@ -685,7 +707,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_login_login_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/login/login.service */ "./src/app/service/login/login.service.ts");
 /* harmony import */ var _model_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/login */ "./src/app/model/login.ts");
 /* harmony import */ var _model_login_status__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/login-status */ "./src/app/model/login-status.ts");
-/* harmony import */ var _service_state_meanu_state_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/state/meanu-state.service */ "./src/app/service/state/meanu-state.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -701,13 +722,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(router, loginService, formBuilder, meanuService) {
+    function LoginComponent(router, loginService, formBuilder) {
         this.router = router;
         this.loginService = loginService;
         this.formBuilder = formBuilder;
-        this.meanuService = meanuService;
         this.displayManu = false;
         this.invalidAuth = false;
     }
@@ -758,18 +777,6 @@ var LoginComponent = /** @class */ (function () {
         //    if ( this.loginStatus.loginFlag === false ) {
         //      return;
         //    }
-        console.log('into onSubmit 555555');
-        var currentManuState = {
-            loginButtonOn: false,
-            mainManuFlag: true,
-            mainButtonOn: false,
-            cadocsButtonOn: true,
-            searchButtonOn: true,
-            eeterrorsButtonOn: true,
-            scheduleButtonOn: true,
-            mappingButtonOn: true
-        };
-        this.meanuService.manuCriteria = currentManuState;
         this.router.navigate(['main']);
     };
     LoginComponent = __decorate([
@@ -780,8 +787,7 @@ var LoginComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _service_login_login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
-            _service_state_meanu_state_service__WEBPACK_IMPORTED_MODULE_6__["MeanuStateService"]])
+            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -830,7 +836,8 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatInputModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatMenuModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"],
             ],
             exports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -843,7 +850,8 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatInputModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatMenuModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"]
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]
             ],
             declarations: []
         })
@@ -1068,66 +1076,6 @@ var LoginService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], LoginService);
     return LoginService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/service/state/meanu-state.service.ts":
-/*!******************************************************!*\
-  !*** ./src/app/service/state/meanu-state.service.ts ***!
-  \******************************************************/
-/*! exports provided: MeanuStateService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MeanuStateService", function() { return MeanuStateService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var MeanuStateService = /** @class */ (function () {
-    function MeanuStateService() {
-        var currentManuState = {
-            loginButtonOn: true,
-            mainManuFlag: false,
-            mainButtonOn: false,
-            cadocsButtonOn: false,
-            searchButtonOn: false,
-            eeterrorsButtonOn: false,
-            scheduleButtonOn: false,
-            mappingButtonOn: false
-        };
-        this.manuState = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](currentManuState);
-    }
-    Object.defineProperty(MeanuStateService.prototype, "manuCriteria", {
-        set: function (value) {
-            this.manuState.next(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MeanuStateService.prototype.getState = function () {
-        return this.manuState.asObservable();
-    };
-    MeanuStateService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: 'root'
-        }),
-        __metadata("design:paramtypes", [])
-    ], MeanuStateService);
-    return MeanuStateService;
 }());
 
 

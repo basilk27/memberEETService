@@ -18,7 +18,7 @@ module.exports = "/**\n * Applies styles for users in high contrast mode. Note t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n\nhtml {\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  box-sizing: border-box;\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n}\n\n\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n\nhtml {\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  box-sizing: border-box;\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n}\n\n.member-card {\n  position: absolute;\n  width: calc(100% - 0px);\n  min-height: 100% !important;\n}\n\n.member-card-2 {\n  width: calc(100% - 0px);\n  height: calc(100% - 0px);\n}\n\n.member-card-1 {\n  width: 100%;\n  height: 100%;\n  margin: 0% auto;\n}\n"
 
 /***/ }),
 
