@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0063a38-bc3b-4c95-b3e4-0ff1cda7e1a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/EetmemberApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/domain/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/domain/LoginStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/services/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anthem/member/eetmember/services/LoginServiceImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/vendor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/eetmember-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/eetmember-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.anthem.member.eetmember.EetmemberApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.anthem.member.eetmember.controller.LoginControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.anthem.member.eetmember.services.LoginServiceImpTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.anthem.member.eetmember.EetmemberApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.anthem.member.eetmember.controller.LoginControllerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.anthem.member.eetmember.services.LoginServiceImpTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/anthem/member/eetmember/EetmemberApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/anthem/member/eetmember/controller/LoginControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/anthem/member/eetmember/services/LoginServiceImpTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="c0063a38-bc3b-4c95-b3e4-0ff1cda7e1a5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,9 +15,10 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -190,8 +152,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="413" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="216" />
+    <option name="y" value="306" />
     <option name="width" value="1680" />
     <option name="height" value="976" />
   </component>
@@ -201,7 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,13 +181,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538682279851" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539023594002" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="ignore_missing_gitignore" value="true" />
@@ -346,7 +309,7 @@
       <updated>1538441672439</updated>
       <workItem from="1538441678299" duration="24141000" />
       <workItem from="1538746424151" duration="4288000" />
-      <workItem from="1539023390937" duration="203000" />
+      <workItem from="1539023390937" duration="955000" />
     </task>
     <servers />
   </component>
@@ -380,10 +343,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28429000" />
+    <option name="totallyTimeSpent" value="29384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="976" extended-state="6" />
+    <frame x="216" y="306" width="1680" height="976" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23525798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -524,7 +487,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
-          <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
         </state>
       </provider>
     </entry>

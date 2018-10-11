@@ -202,12 +202,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _job_schedule_job_schedule_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./job-schedule/job-schedule.component */ "./src/app/job-schedule/job-schedule.component.ts");
 /* harmony import */ var _group_mapping_group_mapping_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./group-mapping/group-mapping.component */ "./src/app/group-mapping/group-mapping.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _create_employer_profile_create_employer_profile_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./create-employer-profile/create-employer-profile.component */ "./src/app/create-employer-profile/create-employer-profile.component.ts");
+/* harmony import */ var _update_employer_profile_update_employer_profile_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./update-employer-profile/update-employer-profile.component */ "./src/app/update-employer-profile/update-employer-profile.component.ts");
+/* harmony import */ var _view_employer_profile_view_employer_profile_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./view-employer-profile/view-employer-profile.component */ "./src/app/view-employer-profile/view-employer-profile.component.ts");
+/* harmony import */ var _update_employer_contacts_update_employer_contacts_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./update-employer-contacts/update-employer-contacts.component */ "./src/app/update-employer-contacts/update-employer-contacts.component.ts");
+/* harmony import */ var _view_error_message_view_error_message_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./view-error-message/view-error-message.component */ "./src/app/view-error-message/view-error-message.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
 
 
 
@@ -240,7 +250,12 @@ var AppModule = /** @class */ (function () {
                 _eet_errors_eet_errors_component__WEBPACK_IMPORTED_MODULE_13__["EetErrorsComponent"],
                 _job_schedule_job_schedule_component__WEBPACK_IMPORTED_MODULE_14__["JobScheduleComponent"],
                 _group_mapping_group_mapping_component__WEBPACK_IMPORTED_MODULE_15__["GroupMappingComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_16__["HomeComponent"]
+                _home_home_component__WEBPACK_IMPORTED_MODULE_16__["HomeComponent"],
+                _create_employer_profile_create_employer_profile_component__WEBPACK_IMPORTED_MODULE_17__["CreateEmployerProfileComponent"],
+                _update_employer_profile_update_employer_profile_component__WEBPACK_IMPORTED_MODULE_18__["UpdateEmployerProfileComponent"],
+                _view_employer_profile_view_employer_profile_component__WEBPACK_IMPORTED_MODULE_19__["ViewEmployerProfileComponent"],
+                _update_employer_contacts_update_employer_contacts_component__WEBPACK_IMPORTED_MODULE_20__["UpdateEmployerContactsComponent"],
+                _view_error_message_view_error_message_component__WEBPACK_IMPORTED_MODULE_21__["ViewErrorMessageComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -324,6 +339,111 @@ var CaDocReportsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/create-employer-profile/create-employer-profile.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/create-employer-profile/create-employer-profile.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/create-employer-profile/create-employer-profile.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/create-employer-profile/create-employer-profile.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Create Employer Profile information:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"createEmpProfileForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <input type=\"text\" matInput placeholder=\"Case Number\" formControlName=\"caseNumber\">\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/create-employer-profile/create-employer-profile.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/create-employer-profile/create-employer-profile.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: CreateEmployerProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateEmployerProfileComponent", function() { return CreateEmployerProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CreateEmployerProfileComponent = /** @class */ (function () {
+    function CreateEmployerProfileComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    CreateEmployerProfileComponent.prototype.ngOnInit = function () {
+        this.createEmpProfileForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            caseNumber: [''],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(CreateEmployerProfileComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.createEmpProfileForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CreateEmployerProfileComponent.prototype, "caseNumberCtrl", {
+        get: function () {
+            return this.createEmpProfileForm.get('caseNumber');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CreateEmployerProfileComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.createEmpProfileForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CreateEmployerProfileComponent.prototype.onSubmit = function () {
+        if (this.createEmpProfileForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    CreateEmployerProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-create-employer-profile',
+            template: __webpack_require__(/*! ./create-employer-profile.component.html */ "./src/app/create-employer-profile/create-employer-profile.component.html"),
+            styles: [__webpack_require__(/*! ./create-employer-profile.component.css */ "./src/app/create-employer-profile/create-employer-profile.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], CreateEmployerProfileComponent);
+    return CreateEmployerProfileComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/eet-errors/eet-errors.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/eet-errors/eet-errors.component.css ***!
@@ -342,7 +462,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">EET Errors</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>eet-errors display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<mat-card class=\"eet-main-card\">\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <div *ngIf='zManuState.mainButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n      </div>\n      <div *ngIf='zManuState.cadocsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n      </div>\n      <div *ngIf='zManuState.searchButtonOn'>\n        <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n      </div>\n      <div *ngIf='zManuState.eeterrorsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n      </div>\n      <div *ngIf='zManuState.scheduleButtonOn'>\n        <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n      </div>\n      <div *ngIf='zManuState.mappingButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n      </div>\n    </mat-toolbar>\n  </div>\n  <div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n    <mat-card>\n      <mat-card-content>\n        <app-view-error-message></app-view-error-message>\n      </mat-card-content>\n    </mat-card>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -357,6 +477,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EetErrorsComponent", function() { return EetErrorsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -367,10 +488,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var EetErrorsComponent = /** @class */ (function () {
-    function EetErrorsComponent() {
+    function EetErrorsComponent(_router) {
+        this._router = _router;
+        this.zManuState = {
+            mainManuFlag: true,
+            mainButtonOn: true,
+            cadocsButtonOn: false,
+            searchButtonOn: false,
+            eeterrorsButtonOn: false,
+            scheduleButtonOn: false,
+            mappingButtonOn: false
+        };
     }
     EetErrorsComponent.prototype.ngOnInit = function () {
+    };
+    EetErrorsComponent.prototype.mainRouter = function () {
+        this._router.navigate(['/main']);
+    };
+    EetErrorsComponent.prototype.cadocsRouter = function () {
+        this._router.navigate(['/cadocs']);
+    };
+    EetErrorsComponent.prototype.searchRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    EetErrorsComponent.prototype.eeterrorsRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    EetErrorsComponent.prototype.scheduleRouter = function () {
+        this._router.navigate(['/schedule']);
+    };
+    EetErrorsComponent.prototype.mappingRouter = function () {
+        this._router.navigate(['/mapping']);
     };
     EetErrorsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -378,7 +528,7 @@ var EetErrorsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./eet-errors.component.html */ "./src/app/eet-errors/eet-errors.component.html"),
             styles: [__webpack_require__(/*! ./eet-errors.component.css */ "./src/app/eet-errors/eet-errors.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], EetErrorsComponent);
     return EetErrorsComponent;
 }());
@@ -394,7 +544,7 @@ var EetErrorsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".eet-main-card {\n  width: 80%;\n  margin: 5% auto;\n}\n\n.eet-main-card-old-01 {\n  width: 1000px;\n  margin: 10% auto;\n}\n"
 
 /***/ }),
 
@@ -405,7 +555,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf='zManuState.mainManuFlag'>\n  <mat-toolbar color=\"accent\">\n    <div *ngIf='zManuState.mainButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n    </div>\n    <div *ngIf='zManuState.cadocsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n    </div>\n    <div *ngIf='zManuState.searchButtonOn'>\n      <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n    </div>\n    <div *ngIf='zManuState.eeterrorsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n    </div>\n    <div *ngIf='zManuState.scheduleButtonOn'>\n    <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n    </div>\n    <div *ngIf='zManuState.mappingButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n    </div>\n  </mat-toolbar>\n</div>\n<!-- <div fxLayout=\"column\" fxLayoutAlign=\"center stretch\" fxFill> -->\n<!-- bmk hold\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n-->\n<div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n  <mat-card>\n    <mat-card-subtitle>\n    <!--  <mat-card-title class=\"mat-display-2\">  -->\n        <span><p>Welcome to the Electronic Eligibility Transfer (EET) options menu.<br>\n          EET is an application that allows authorized users to manage membership eligibility via a browser interface.<br>\n          From this menu, users can perform the following tasks based on access privileges.</p></span>\n    <!--  </mat-card-title>  -->\n    </mat-card-subtitle>\n    <mat-card-content>\n        <mat-tab-group>\n          <mat-tab label=\"Create Employer EET Profile\">Create Employer EET Profile info</mat-tab>\n          <mat-tab label=\"Update Employer EET Profile\">Update Employer EET Profile info</mat-tab>\n          <mat-tab label=\"View Employer EET Profile\">View Employer EET Profile info</mat-tab>\n          <mat-tab label=\"Update Employer EET Contacts\">Update Employer EET Contacts info</mat-tab>\n        </mat-tab-group>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<mat-card class=\"eet-main-card\">\n<div *ngIf='zManuState.mainManuFlag'>\n  <mat-toolbar color=\"accent\">\n    <div *ngIf='zManuState.mainButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n    </div>\n    <div *ngIf='zManuState.cadocsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n    </div>\n    <div *ngIf='zManuState.searchButtonOn'>\n      <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n    </div>\n    <div *ngIf='zManuState.eeterrorsButtonOn'>\n      <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n    </div>\n    <div *ngIf='zManuState.scheduleButtonOn'>\n    <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n    </div>\n    <div *ngIf='zManuState.mappingButtonOn'>\n      <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n    </div>\n  </mat-toolbar>\n</div>\n<!-- <div fxLayout=\"column\" fxLayoutAlign=\"center stretch\" fxFill> -->\n<!-- bmk hold\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n-->\n<div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n  <mat-card>\n    <mat-card-subtitle>\n        <span><p>Welcome to the Electronic Eligibility Transfer (EET) options menu.<br>\n          EET is an application that allows authorized users to manage membership eligibility via a browser interface.<br>\n          From this menu, users can perform the following tasks based on access privileges.</p>\n        </span>\n    </mat-card-subtitle>\n    <mat-card-content>\n        <mat-tab-group>\n          <mat-tab label=\"Create Employer EET Profile\">\n            <app-create-employer-profile></app-create-employer-profile>\n          </mat-tab>\n          <mat-tab label=\"Update Employer EET Profile\">\n            <app-update-employer-profile></app-update-employer-profile>\n          </mat-tab>\n          <mat-tab label=\"View Employer EET Profile\">\n            <app-view-employer-profile></app-view-employer-profile>\n          </mat-tab>\n          <mat-tab label=\"Update Employer EET Contacts\">\n            <app-update-employer-contacts></app-update-employer-contacts>\n          </mat-tab>\n        </mat-tab-group>\n    </mat-card-content>\n  </mat-card>\n</div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -457,7 +607,7 @@ var EetMainComponent = /** @class */ (function () {
         this._router.navigate(['/search']);
     };
     EetMainComponent.prototype.eeterrorsRouter = function () {
-        this._router.navigate(['/search']);
+        this._router.navigate(['/eeterrors']);
     };
     EetMainComponent.prototype.scheduleRouter = function () {
         this._router.navigate(['/schedule']);
@@ -838,6 +988,7 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatMenuModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSelectModule"]
             ],
             exports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -851,7 +1002,8 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatMenuModule"],
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_2__["FlexLayoutModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSelectModule"]
             ],
             declarations: []
         })
@@ -1076,6 +1228,427 @@ var LoginService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], LoginService);
     return LoginService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/update-employer-contacts/update-employer-contacts.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/update-employer-contacts/update-employer-contacts.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/update-employer-contacts/update-employer-contacts.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/update-employer-contacts/update-employer-contacts.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title>Update Employer Contact Profile:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"updateEmpContactProfileForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field>\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\" >\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <input type=\"text\" matInput placeholder=\"Case Number\" formControlName=\"caseNumber\">\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong></mat-error>\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/update-employer-contacts/update-employer-contacts.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/update-employer-contacts/update-employer-contacts.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: UpdateEmployerContactsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateEmployerContactsComponent", function() { return UpdateEmployerContactsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UpdateEmployerContactsComponent = /** @class */ (function () {
+    function UpdateEmployerContactsComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    UpdateEmployerContactsComponent.prototype.ngOnInit = function () {
+        this.updateEmpContactProfileForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            caseNumber: [''],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(UpdateEmployerContactsComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.updateEmpContactProfileForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UpdateEmployerContactsComponent.prototype, "caseNumberCtrl", {
+        get: function () {
+            return this.updateEmpContactProfileForm.get('caseNumber');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UpdateEmployerContactsComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.updateEmpContactProfileForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    UpdateEmployerContactsComponent.prototype.onSubmit = function () {
+        if (this.updateEmpContactProfileForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    UpdateEmployerContactsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-update-employer-contacts',
+            template: __webpack_require__(/*! ./update-employer-contacts.component.html */ "./src/app/update-employer-contacts/update-employer-contacts.component.html"),
+            styles: [__webpack_require__(/*! ./update-employer-contacts.component.css */ "./src/app/update-employer-contacts/update-employer-contacts.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], UpdateEmployerContactsComponent);
+    return UpdateEmployerContactsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/update-employer-profile/update-employer-profile.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/update-employer-profile/update-employer-profile.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/update-employer-profile/update-employer-profile.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/update-employer-profile/update-employer-profile.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Update Employer Profile information:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"updateEmpProfileForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <input type=\"text\" matInput placeholder=\"Case Number\" formControlName=\"caseNumber\">\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/update-employer-profile/update-employer-profile.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/update-employer-profile/update-employer-profile.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: UpdateEmployerProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateEmployerProfileComponent", function() { return UpdateEmployerProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UpdateEmployerProfileComponent = /** @class */ (function () {
+    function UpdateEmployerProfileComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    UpdateEmployerProfileComponent.prototype.ngOnInit = function () {
+        this.updateEmpProfileForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            caseNumber: [''],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(UpdateEmployerProfileComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.updateEmpProfileForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UpdateEmployerProfileComponent.prototype, "caseNumberCtrl", {
+        get: function () {
+            return this.updateEmpProfileForm.get('caseNumber');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(UpdateEmployerProfileComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.updateEmpProfileForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    UpdateEmployerProfileComponent.prototype.onSubmit = function () {
+        if (this.updateEmpProfileForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    UpdateEmployerProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-update-employer-profile',
+            template: __webpack_require__(/*! ./update-employer-profile.component.html */ "./src/app/update-employer-profile/update-employer-profile.component.html"),
+            styles: [__webpack_require__(/*! ./update-employer-profile.component.css */ "./src/app/update-employer-profile/update-employer-profile.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], UpdateEmployerProfileComponent);
+    return UpdateEmployerProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/view-employer-profile/view-employer-profile.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/view-employer-profile/view-employer-profile.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/*\n.view-emp-profile-card {\n  width: 900px;\n  margin-top: 5%;\n  margin-left: 20%;\n}\n\n.view-emp-profile-form {\n  min-width: 160px;\n  max-width: 500px;\n  width: 100%;\n  margin-left: 25%;\n}\n\n.view-emp-profile-full-width {\n  width: 60%;\n}\n*/\n"
+
+/***/ }),
+
+/***/ "./src/app/view-employer-profile/view-employer-profile.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/view-employer-profile/view-employer-profile.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Enter Employer Profile information to View:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"viewEmpProfileForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <input type=\"text\" matInput placeholder=\"Case Number\" formControlName=\"caseNumber\">\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/view-employer-profile/view-employer-profile.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/view-employer-profile/view-employer-profile.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: ViewEmployerProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewEmployerProfileComponent", function() { return ViewEmployerProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ViewEmployerProfileComponent = /** @class */ (function () {
+    function ViewEmployerProfileComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    ViewEmployerProfileComponent.prototype.ngOnInit = function () {
+        this.viewEmpProfileForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            caseNumber: [''],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(ViewEmployerProfileComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.viewEmpProfileForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ViewEmployerProfileComponent.prototype, "caseNumberCtrl", {
+        get: function () {
+            return this.viewEmpProfileForm.get('caseNumber');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ViewEmployerProfileComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.viewEmpProfileForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ViewEmployerProfileComponent.prototype.onSubmit = function () {
+        if (this.viewEmpProfileForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    ViewEmployerProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-view-employer-profile',
+            template: __webpack_require__(/*! ./view-employer-profile.component.html */ "./src/app/view-employer-profile/view-employer-profile.component.html"),
+            styles: [__webpack_require__(/*! ./view-employer-profile.component.css */ "./src/app/view-employer-profile/view-employer-profile.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], ViewEmployerProfileComponent);
+    return ViewEmployerProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/view-error-message/view-error-message.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/view-error-message/view-error-message.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/view-error-message/view-error-message.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/view-error-message/view-error-message.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">View Employer EET Error Messages:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"viewErrorMessageForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <mat-select placeholder=\"Select Status Type\" formControlName=\"statusType\">\n              <mat-option *ngFor=\"let itemStatus of statusTypes\" [value]=\"itemStatus\">\n                {{itemStatus}}\n              </mat-option>\n            </mat-select>\n            <mat-error\n              *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/view-error-message/view-error-message.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/view-error-message/view-error-message.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ViewErrorMessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewErrorMessageComponent", function() { return ViewErrorMessageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ViewErrorMessageComponent = /** @class */ (function () {
+    function ViewErrorMessageComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.statusTypes = ['Open', 'Complete', 'Bypass'];
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    ViewErrorMessageComponent.prototype.ngOnInit = function () {
+        this.viewErrorMessageForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            statusType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(ViewErrorMessageComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.viewErrorMessageForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ViewErrorMessageComponent.prototype, "statusTypeCtrl", {
+        get: function () {
+            return this.viewErrorMessageForm.get('statusType');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ViewErrorMessageComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.viewErrorMessageForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ViewErrorMessageComponent.prototype.onSubmit = function () {
+        if (this.viewErrorMessageForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    ViewErrorMessageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-view-error-message',
+            template: __webpack_require__(/*! ./view-error-message.component.html */ "./src/app/view-error-message/view-error-message.component.html"),
+            styles: [__webpack_require__(/*! ./view-error-message.component.css */ "./src/app/view-error-message/view-error-message.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], ViewErrorMessageComponent);
+    return ViewErrorMessageComponent;
 }());
 
 
