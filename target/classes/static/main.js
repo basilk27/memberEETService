@@ -207,12 +207,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _view_employer_profile_view_employer_profile_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./view-employer-profile/view-employer-profile.component */ "./src/app/view-employer-profile/view-employer-profile.component.ts");
 /* harmony import */ var _update_employer_contacts_update_employer_contacts_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./update-employer-contacts/update-employer-contacts.component */ "./src/app/update-employer-contacts/update-employer-contacts.component.ts");
 /* harmony import */ var _view_error_message_view_error_message_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./view-error-message/view-error-message.component */ "./src/app/view-error-message/view-error-message.component.ts");
+/* harmony import */ var _job_schedule_option_job_schedule_option_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./job-schedule-option/job-schedule-option.component */ "./src/app/job-schedule-option/job-schedule-option.component.ts");
+/* harmony import */ var _group_mapping_option_group_mapping_option_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./group-mapping-option/group-mapping-option.component */ "./src/app/group-mapping-option/group-mapping-option.component.ts");
+/* harmony import */ var _search_status_option_search_status_option_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./search-status-option/search-status-option.component */ "./src/app/search-status-option/search-status-option.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -255,7 +261,10 @@ var AppModule = /** @class */ (function () {
                 _update_employer_profile_update_employer_profile_component__WEBPACK_IMPORTED_MODULE_18__["UpdateEmployerProfileComponent"],
                 _view_employer_profile_view_employer_profile_component__WEBPACK_IMPORTED_MODULE_19__["ViewEmployerProfileComponent"],
                 _update_employer_contacts_update_employer_contacts_component__WEBPACK_IMPORTED_MODULE_20__["UpdateEmployerContactsComponent"],
-                _view_error_message_view_error_message_component__WEBPACK_IMPORTED_MODULE_21__["ViewErrorMessageComponent"]
+                _view_error_message_view_error_message_component__WEBPACK_IMPORTED_MODULE_21__["ViewErrorMessageComponent"],
+                _job_schedule_option_job_schedule_option_component__WEBPACK_IMPORTED_MODULE_22__["JobScheduleOptionComponent"],
+                _group_mapping_option_group_mapping_option_component__WEBPACK_IMPORTED_MODULE_23__["GroupMappingOptionComponent"],
+                _search_status_option_search_status_option_component__WEBPACK_IMPORTED_MODULE_24__["SearchStatusOptionComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -294,7 +303,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">CA Doc Report</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>ca-doc-report display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">CA Doc Report</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>ca-doc-report display info.</p>\n      <div>\n        <h2>Not implemented yet.</h2>\n      </div>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" (click)=\"goBackToMain()\">Submit</button>\n      </mat-card-actions>\n\n    </mat-card-content>\n  </mat-card>\n</div>\n"
 
 /***/ }),
 
@@ -309,6 +318,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CaDocReportsComponent", function() { return CaDocReportsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -319,10 +329,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CaDocReportsComponent = /** @class */ (function () {
-    function CaDocReportsComponent() {
+    function CaDocReportsComponent(_router) {
+        this._router = _router;
     }
     CaDocReportsComponent.prototype.ngOnInit = function () {
+    };
+    CaDocReportsComponent.prototype.goBackToMain = function () {
+        this._router.navigate(['/main']);
     };
     CaDocReportsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -330,7 +345,7 @@ var CaDocReportsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./ca-doc-reports.component.html */ "./src/app/ca-doc-reports/ca-doc-reports.component.html"),
             styles: [__webpack_require__(/*! ./ca-doc-reports.component.css */ "./src/app/ca-doc-reports/ca-doc-reports.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], CaDocReportsComponent);
     return CaDocReportsComponent;
 }());
@@ -451,7 +466,7 @@ var CreateEmployerProfileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".eet-main-card {\n  width: 80%;\n  margin: 5% auto;\n}\n\n.eet-main-card-old-01 {\n  width: 1000px;\n  margin: 10% auto;\n}\n"
 
 /***/ }),
 
@@ -630,6 +645,112 @@ var EetMainComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/group-mapping-option/group-mapping-option.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/group-mapping-option/group-mapping-option.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/group-mapping-option/group-mapping-option.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/group-mapping-option/group-mapping-option.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Select the Group Mapping Option:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"groupMappingOptionForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <mat-select placeholder=\"Select an Option\" formControlName=\"optionType\">\n              <mat-option *ngFor=\"let itemOptionType of optionTypes\" [value]=\"itemOptionType\">\n                {{itemOptionType}}\n              </mat-option>\n            </mat-select>\n            <mat-error\n              *ngIf=\"sourceSystemCtrl.hasError('required')\">A Option is <strong>required</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSourceTypes of sourceTypes\" [value]=\"itemSourceTypes\">\n              {{itemSourceTypes}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/group-mapping-option/group-mapping-option.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/group-mapping-option/group-mapping-option.component.ts ***!
+  \************************************************************************/
+/*! exports provided: GroupMappingOptionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupMappingOptionComponent", function() { return GroupMappingOptionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var GroupMappingOptionComponent = /** @class */ (function () {
+    function GroupMappingOptionComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.optionTypes = ['View Group Mapping'];
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    GroupMappingOptionComponent.prototype.ngOnInit = function () {
+        this.groupMappingOptionForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            optionType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(GroupMappingOptionComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.groupMappingOptionForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GroupMappingOptionComponent.prototype, "optionTypesCtrl", {
+        get: function () {
+            return this.groupMappingOptionForm.get('optionType');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GroupMappingOptionComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.groupMappingOptionForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GroupMappingOptionComponent.prototype.onSubmit = function () {
+        if (this.groupMappingOptionForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    GroupMappingOptionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-group-mapping-option',
+            template: __webpack_require__(/*! ./group-mapping-option.component.html */ "./src/app/group-mapping-option/group-mapping-option.component.html"),
+            styles: [__webpack_require__(/*! ./group-mapping-option.component.css */ "./src/app/group-mapping-option/group-mapping-option.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], GroupMappingOptionComponent);
+    return GroupMappingOptionComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/group-mapping/group-mapping.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/group-mapping/group-mapping.component.css ***!
@@ -637,7 +758,7 @@ var EetMainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".eet-main-card {\n  width: 80%;\n  margin: 5% auto;\n}\n\n.eet-main-card-old-01 {\n  width: 1000px;\n  margin: 10% auto;\n}\n"
 
 /***/ }),
 
@@ -648,7 +769,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">Group Mapping</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>Group Mapping display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<mat-card class=\"eet-main-card\">\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <div *ngIf='zManuState.mainButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n      </div>\n      <div *ngIf='zManuState.cadocsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n      </div>\n      <div *ngIf='zManuState.searchButtonOn'>\n        <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n      </div>\n      <div *ngIf='zManuState.eeterrorsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n      </div>\n      <div *ngIf='zManuState.scheduleButtonOn'>\n        <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n      </div>\n      <div *ngIf='zManuState.mappingButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n      </div>\n    </mat-toolbar>\n  </div>\n  <div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n    <mat-card>\n      <mat-card-content>\n        <app-group-mapping-option></app-group-mapping-option>\n      </mat-card-content>\n    </mat-card>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -663,6 +784,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupMappingComponent", function() { return GroupMappingComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -673,10 +795,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var GroupMappingComponent = /** @class */ (function () {
-    function GroupMappingComponent() {
+    function GroupMappingComponent(_router) {
+        this._router = _router;
+        this.zManuState = {
+            mainManuFlag: true,
+            mainButtonOn: true,
+            cadocsButtonOn: false,
+            searchButtonOn: false,
+            eeterrorsButtonOn: false,
+            scheduleButtonOn: false,
+            mappingButtonOn: false
+        };
     }
     GroupMappingComponent.prototype.ngOnInit = function () {
+    };
+    GroupMappingComponent.prototype.mainRouter = function () {
+        this._router.navigate(['/main']);
+    };
+    GroupMappingComponent.prototype.cadocsRouter = function () {
+        this._router.navigate(['/cadocs']);
+    };
+    GroupMappingComponent.prototype.searchRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    GroupMappingComponent.prototype.eeterrorsRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    GroupMappingComponent.prototype.scheduleRouter = function () {
+        this._router.navigate(['/schedule']);
+    };
+    GroupMappingComponent.prototype.mappingRouter = function () {
+        this._router.navigate(['/mapping']);
     };
     GroupMappingComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -684,7 +835,7 @@ var GroupMappingComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./group-mapping.component.html */ "./src/app/group-mapping/group-mapping.component.html"),
             styles: [__webpack_require__(/*! ./group-mapping.component.css */ "./src/app/group-mapping/group-mapping.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], GroupMappingComponent);
     return GroupMappingComponent;
 }());
@@ -756,6 +907,112 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/job-schedule-option/job-schedule-option.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/job-schedule-option/job-schedule-option.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/job-schedule-option/job-schedule-option.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/job-schedule-option/job-schedule-option.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Select the Job Schedule Option:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"jobScheduleOptionForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <mat-select placeholder=\"Select Job Type\" formControlName=\"jobType\">\n              <mat-option *ngFor=\"let itemjobType of jobTypes\" [value]=\"itemjobType\">\n                {{itemjobType}}\n              </mat-option>\n            </mat-select>\n            <mat-error\n              *ngIf=\"sourceSystemCtrl.hasError('required')\">A Job Type is <strong>required</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/job-schedule-option/job-schedule-option.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/job-schedule-option/job-schedule-option.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: JobScheduleOptionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobScheduleOptionComponent", function() { return JobScheduleOptionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var JobScheduleOptionComponent = /** @class */ (function () {
+    function JobScheduleOptionComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.jobTypes = ['Create Job Schedule', 'Update Job Schedule', 'View Job Schedule'];
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    JobScheduleOptionComponent.prototype.ngOnInit = function () {
+        this.jobScheduleOptionForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            jobType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(JobScheduleOptionComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.jobScheduleOptionForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobScheduleOptionComponent.prototype, "jobTypeCtrl", {
+        get: function () {
+            return this.jobScheduleOptionForm.get('jobType');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobScheduleOptionComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.jobScheduleOptionForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    JobScheduleOptionComponent.prototype.onSubmit = function () {
+        if (this.jobScheduleOptionForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    JobScheduleOptionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-job-schedule-option',
+            template: __webpack_require__(/*! ./job-schedule-option.component.html */ "./src/app/job-schedule-option/job-schedule-option.component.html"),
+            styles: [__webpack_require__(/*! ./job-schedule-option.component.css */ "./src/app/job-schedule-option/job-schedule-option.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], JobScheduleOptionComponent);
+    return JobScheduleOptionComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/job-schedule/job-schedule.component.css":
 /*!*********************************************************!*\
   !*** ./src/app/job-schedule/job-schedule.component.css ***!
@@ -763,7 +1020,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".eet-main-card {\n  width: 80%;\n  margin: 5% auto;\n}\n\n.eet-main-card-old-01 {\n  width: 1000px;\n  margin: 10% auto;\n}\n"
 
 /***/ }),
 
@@ -774,7 +1031,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">Job Schedule</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>Job Schedule display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<mat-card class=\"eet-main-card\">\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <div *ngIf='zManuState.mainButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n      </div>\n      <div *ngIf='zManuState.cadocsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n      </div>\n      <div *ngIf='zManuState.searchButtonOn'>\n        <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n      </div>\n      <div *ngIf='zManuState.eeterrorsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n      </div>\n      <div *ngIf='zManuState.scheduleButtonOn'>\n        <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n      </div>\n      <div *ngIf='zManuState.mappingButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n      </div>\n    </mat-toolbar>\n  </div>\n  <div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n    <mat-card>\n      <mat-card-content>\n        <app-job-schedule-option></app-job-schedule-option>\n      </mat-card-content>\n    </mat-card>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -789,6 +1046,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobScheduleComponent", function() { return JobScheduleComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -799,10 +1057,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var JobScheduleComponent = /** @class */ (function () {
-    function JobScheduleComponent() {
+    function JobScheduleComponent(_router) {
+        this._router = _router;
+        this.zManuState = {
+            mainManuFlag: true,
+            mainButtonOn: true,
+            cadocsButtonOn: false,
+            searchButtonOn: false,
+            eeterrorsButtonOn: false,
+            scheduleButtonOn: false,
+            mappingButtonOn: false
+        };
     }
     JobScheduleComponent.prototype.ngOnInit = function () {
+    };
+    JobScheduleComponent.prototype.mainRouter = function () {
+        this._router.navigate(['/main']);
+    };
+    JobScheduleComponent.prototype.cadocsRouter = function () {
+        this._router.navigate(['/cadocs']);
+    };
+    JobScheduleComponent.prototype.searchRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    JobScheduleComponent.prototype.eeterrorsRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    JobScheduleComponent.prototype.scheduleRouter = function () {
+        this._router.navigate(['/schedule']);
+    };
+    JobScheduleComponent.prototype.mappingRouter = function () {
+        this._router.navigate(['/mapping']);
     };
     JobScheduleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -810,7 +1097,7 @@ var JobScheduleComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./job-schedule.component.html */ "./src/app/job-schedule/job-schedule.component.html"),
             styles: [__webpack_require__(/*! ./job-schedule.component.css */ "./src/app/job-schedule/job-schedule.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], JobScheduleComponent);
     return JobScheduleComponent;
 }());
@@ -1122,6 +1409,112 @@ var PageNotFoundComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/search-status-option/search-status-option.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/search-status-option/search-status-option.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/search-status-option/search-status-option.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/search-status-option/search-status-option.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"tab-emp-profile-card\">\n  <mat-card-header>\n    <mat-card-title class=\"mat-h1\">Search Status Option:&nbsp;</mat-card-title>\n  </mat-card-header>\n  <div>\n    <h2>Work in progress on this screen. Need to talk to someone on how the original radio buttons work on this selection screen.</h2>\n  </div>\n  <!--\n  <mat-card-content>\n    <form class=\"tab-emp-profile-form\" [formGroup]=\"searchStatusOptionForm\" (ngSubmit)=\"onSubmit()\">\n      <table class=\"tab-emp-profile-full-width\" cellspacing=\"0\">\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <input type=\"text\" matInput placeholder=\"Client ID\" formControlName=\"clientId\">\n          <mat-error\n            *ngIf=\"clientIdCtrl.hasError('required')\">Client ID is <strong>required</strong></mat-error>\n        </mat-form-field>\n        <div>\n          <mat-form-field class=\"tab-emp-profile-full-width\">\n            <mat-select placeholder=\"Select Job Type\" formControlName=\"jobType\">\n              <mat-option *ngFor=\"let itemjobType of jobTypes\" [value]=\"itemjobType\">\n                {{itemjobType}}\n              </mat-option>\n            </mat-select>\n            <mat-error\n              *ngIf=\"sourceSystemCtrl.hasError('required')\">A Job Type is <strong>required</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <mat-form-field class=\"tab-emp-profile-full-width\">\n          <mat-select placeholder=\"Select Source Transaction\" formControlName=\"sourceSystem\">\n            <mat-option *ngFor=\"let itemSource of sourceTypes\" [value]=\"itemSource\">\n              {{itemSource}}\n            </mat-option>\n          </mat-select>\n          <mat-error\n            *ngIf=\"sourceSystemCtrl.hasError('required')\">A Source Transaction is <strong>required</strong>\n          </mat-error>\n\n        </mat-form-field>\n      </table>\n      <mat-card-actions>\n        <button mat-raised-button color=\"primary\" type=\"submit\">Submit</button>\n      </mat-card-actions>\n    </form>\n  </mat-card-content>\n  -->\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/search-status-option/search-status-option.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/search-status-option/search-status-option.component.ts ***!
+  \************************************************************************/
+/*! exports provided: SearchStatusOptionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchStatusOptionComponent", function() { return SearchStatusOptionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SearchStatusOptionComponent = /** @class */ (function () {
+    function SearchStatusOptionComponent(router, formBuilder) {
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.jobTypes = ['Create Job Schedule', 'Update Job Schedule', 'View Job Schedule'];
+        this.sourceTypes = ['WGS 2.0 System', 'Diamond 950', 'Facets System',
+            'M204', 'QCare System', 'STAR System', 'WGS 1.3 System'];
+    }
+    SearchStatusOptionComponent.prototype.ngOnInit = function () {
+        this.searchStatusOptionForm = this.formBuilder.group({
+            clientId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            jobType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            sourceSystem: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    Object.defineProperty(SearchStatusOptionComponent.prototype, "clientIdCtrl", {
+        get: function () {
+            return this.searchStatusOptionForm.get('clientId');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchStatusOptionComponent.prototype, "jobTypeCtrl", {
+        get: function () {
+            return this.searchStatusOptionForm.get('jobType');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SearchStatusOptionComponent.prototype, "sourceSystemCtrl", {
+        get: function () {
+            return this.searchStatusOptionForm.get('sourceSystem');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SearchStatusOptionComponent.prototype.onSubmit = function () {
+        if (this.searchStatusOptionForm.invalid) {
+            console.log('into onSubmit 2');
+            return;
+        }
+        console.log('into onSubmit 3');
+    };
+    SearchStatusOptionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-search-status-option',
+            template: __webpack_require__(/*! ./search-status-option.component.html */ "./src/app/search-status-option/search-status-option.component.html"),
+            styles: [__webpack_require__(/*! ./search-status-option.component.css */ "./src/app/search-status-option/search-status-option.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], SearchStatusOptionComponent);
+    return SearchStatusOptionComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/search-status/search-status.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/search-status/search-status.component.css ***!
@@ -1129,7 +1522,7 @@ var PageNotFoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".eet-main-card {\n  width: 80%;\n  margin: 5% auto;\n}\n\n.eet-main-card-old-01 {\n  width: 1000px;\n  margin: 10% auto;\n}\n"
 
 /***/ }),
 
@@ -1140,7 +1533,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">Search Status</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>search-status display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<!--\n<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title class=\"mat-display-2\">Search Status</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <p>search-status display info.</p>\n    </mat-card-content>\n  </mat-card>\n</div>\n\n\n-->\n<mat-card class=\"eet-main-card\">\n  <div *ngIf='zManuState.mainManuFlag'>\n    <mat-toolbar color=\"accent\">\n      <div *ngIf='zManuState.mainButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mainRouter()\" class='mat-button'>EET Main</a>\n      </div>\n      <div *ngIf='zManuState.cadocsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"cadocsRouter()\" class='mat-button'>View CA-Doc</a>\n      </div>\n      <div *ngIf='zManuState.searchButtonOn'>\n        <a mat-mat-raised-button  (click)=\"searchRouter()\" class='mat-button'>Search Status</a>\n      </div>\n      <div *ngIf='zManuState.eeterrorsButtonOn'>\n        <a mat-mat-raised-button  (click)=\"eeterrorsRouter()\" class='mat-button'>EET Errors</a>\n      </div>\n      <div *ngIf='zManuState.scheduleButtonOn'>\n        <a mat-mat-raised-button  (click)=\"scheduleRouter()\" class='mat-button'>Job Schedule</a>\n      </div>\n      <div *ngIf='zManuState.mappingButtonOn'>\n        <a mat-mat-raised-button  (click)=\"mappingRouter()\" class='mat-button'>Group Mapping</a>\n      </div>\n    </mat-toolbar>\n  </div>\n  <div fxLayout=\"column\" fxFlexAlign=\"stretch\">\n    <mat-card>\n      <mat-card-content>\n        <app-search-status-option></app-search-status-option>\n      </mat-card-content>\n    </mat-card>\n  </div>\n</mat-card>\n\n"
 
 /***/ }),
 
@@ -1155,6 +1548,7 @@ module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center center\">\n  <mat
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchStatusComponent", function() { return SearchStatusComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1165,10 +1559,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SearchStatusComponent = /** @class */ (function () {
-    function SearchStatusComponent() {
+    function SearchStatusComponent(_router) {
+        this._router = _router;
+        this.zManuState = {
+            mainManuFlag: true,
+            mainButtonOn: true,
+            cadocsButtonOn: false,
+            searchButtonOn: false,
+            eeterrorsButtonOn: false,
+            scheduleButtonOn: false,
+            mappingButtonOn: false
+        };
     }
     SearchStatusComponent.prototype.ngOnInit = function () {
+    };
+    SearchStatusComponent.prototype.mainRouter = function () {
+        this._router.navigate(['/main']);
+    };
+    SearchStatusComponent.prototype.cadocsRouter = function () {
+        this._router.navigate(['/cadocs']);
+    };
+    SearchStatusComponent.prototype.searchRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    SearchStatusComponent.prototype.eeterrorsRouter = function () {
+        this._router.navigate(['/search']);
+    };
+    SearchStatusComponent.prototype.scheduleRouter = function () {
+        this._router.navigate(['/schedule']);
+    };
+    SearchStatusComponent.prototype.mappingRouter = function () {
+        this._router.navigate(['/mapping']);
     };
     SearchStatusComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1176,7 +1599,7 @@ var SearchStatusComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./search-status.component.html */ "./src/app/search-status/search-status.component.html"),
             styles: [__webpack_require__(/*! ./search-status.component.css */ "./src/app/search-status/search-status.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], SearchStatusComponent);
     return SearchStatusComponent;
 }());
